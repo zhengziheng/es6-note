@@ -1,0 +1,50 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    函数的参数、
+1、参数的扩展、展开 相当于python的*args
+    可以用来收集剩余的参数
+    展开数组 [...arr] = [展开arr里的内容]
+2、默认参数
+<script>
+    // 收集参数
+function show(a,b,...args){
+    //args rest parameter must be last formal parameter
+    console.log(a)
+    console.log(b)
+    console.log(args)
+}
+
+show(2,3,5,7,7,8)
+
+
+// 展开数组
+let arr1=[1,2,3]
+let arr2 = [4,5,6]
+let show2 = (a,b,c)=>{
+    console.log(a)
+    console.log(b)
+    console.log(c)
+}
+show2(...arr1)
+
+let [...arr1,...arr2]
+
+
+// 默认参数
+
+function add (a=1,b){
+    console.log(a+b)
+}
+add(5) //6
+</script>
+</body>
+</html>

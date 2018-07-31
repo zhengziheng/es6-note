@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    结构赋值
+    1、等号两边结构必须一样
+    2、等号右边必须有数组或者对象
+    3、声明和赋值在一条语句 先声明再赋值会报错
+    比如
+    let [a,b]
+    [a,b] = [1,2]
+    会报错
+    4、数组位置对应，对象键对应
+
+
+    <script>
+    // let [a,b,c] = [1,2,3]
+
+    let {b,c,a} = {a:12,b:13,c:14}
+    console.log(b,c,a)
+    
+    </script>
+</body>
+</html>
