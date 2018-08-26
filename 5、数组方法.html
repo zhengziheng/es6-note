@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        // map操作数组里面的值，返回新数组
+        const newArr = arr.map((item) => {
+            return item * 2
+        })
+
+        //filter返回数组里面符合要求的值的新数组
+        const newArr2 = arr.filter((item) => {
+            return item > 3
+        })
+
+        // forEach对数组里面的每一个值进行操作,和for循环作用差不多
+        let newArr3 = []
+        arr.forEach((item) => {
+            newArr3.push(item * 2)
+        })
+
+        //数组迭代方法,不改变原数组
+        const sum = arr.reduce((temp,item,index)=>{
+            return temp+item
+
+        })
+
+        
+
+
+        // Array.from把类数组变成数组，然后就可以用上面的数组方法了
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // generator生成器函数
+        // 能暂停
+        
+        function *test(){
+            alert('abc')
+            yield
+            alert('bbb')
+        }
+        let gen = test()//生成器函数执行，返回iterator对象，next()方法执行
+        gen.next()//从函数开始执行到第一个yield则停止
+        gen.next()//执行yield后的内容
+
+        // yield可以接收参数
+
+        function *test2(){
+            alert('abc')
+            let a = yield
+            alert('bbb'+a)
+        }
+        let gen = test()//生成器函数执行，返回iterator对象，next()方法执行
+        gen.next()//从函数开始执行到第一个yield则停止
+        gen.next(12)//执行yield后的内容
+
+        // yield可以return值
+        function *test3(){
+            alert('abc')
+            yield 33
+            alert('bbb')
+            return 1213
+        }
+        let gen = test()//生成器函数执行，返回iterator对象，next()方法执行
+        let result1 = gen.next()// {valiue:33,done:false}
+        let result2 = gen.next()//{valiue:1213,done:true}
+        
+
+        // 弊端：需要外部的runner调用iterator的next(),generator不能写箭头函数。
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+        //Promise，同步写法写异步
+        // 同步——串行；异步——并发
+
+        let p   = new Promise((resolve,reject)=>{
+            if(err){
+                return reject(err)
+            }else{
+                resolve()
+            }
+        })
+         
+        p.then().catch()
+        // Promise.all([promise对象，promise对象，promise对象]).then(arr).catch(),三次res结果放在arr里
+        // 这三次请求没有依赖关系
+        Promise.all([
+            axios('/123'),
+            axios('/222'),
+            axios('/333'),
+        ]).then(res=>{
+            let [a,b,c] = res//a,b,c为三次异步请求的返回值
+        })
+
+        Promise.race().then((res)=>{}) //有一个成功即可
+
+        // 局限性：带逻辑的异步操作麻烦
+    </script>
+</body>
+</html>

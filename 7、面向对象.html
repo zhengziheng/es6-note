@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // es5面向对象和继承
+        function Person(name,age){
+            this.age = age
+            this.name = name
+        }
+        Person.prototype.showName = function(){
+            console.log('名字叫'+this.name)
+        }
+
+        //继承Person
+        function Worker(name,age,job){
+            Person.call(this,name,age)
+            this.job = job
+        }
+        Worker.prototype  = new Person()
+        Worker.prototype.constructor = Worker
+        
+
+        // es6
+        class Person{
+            constructor(name,age){
+                this.name = name
+                this.age = age
+            }
+            showName(){
+                console.log('名字叫'+this.name)
+            }
+        }
+
+        class Worker extends Person{
+            constructor(name,age,job){
+                super(name,age)//继承超类属性 extends继承方法
+                this.job = job
+            }
+        }
+            
+        let w = new Worker('zhangsan',12,'workder')
+        document.onclick = w.showName.bind(w)
+
+        //this指向哪个对象的问题
+        // 普通函数：根据调用者，谁调用this是谁
+        // 箭头函数：根据所在环境判断，根据在哪里定义来指向
+
+        // 箭头函数中的this恒跟环境走，不受bind改变
+
+    </script>
+</body>
+</html>

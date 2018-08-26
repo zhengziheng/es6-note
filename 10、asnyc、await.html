@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // async/await是generator的语法糖，写法上小更改既可 
+        //  await 后面跟一个异步操作await等待成功的返回
+        async function show(params) {
+            alert('111')
+            await
+                alert('222')
+        }
+
+        show()
+
+        async function testAsync() {
+            try {
+                const result1 = await $.ajax('/123')
+            } catch (error) {
+                alert('数据请求失败')
+                throw new Error('网络请求失败了')
+
+            }
+
+            if (result1.test > 1) {
+                let result2 = await $.ajax('/456')
+                if (result2 === 'xxx') {
+                    return xxx
+                }
+            } else {
+                let result3 = await $.ajax('/789')
+                if (result3 === 'aaa') {
+                    return aaa
+                }
+            }
+        }
+
+        testAsync()
+
+
+
+
+
+    </script>
+</body>
+
+</html>
